@@ -1,1 +1,145 @@
-body{font-family:system-ui} main{max-width:860px;margin:2rem auto}
+
+body {
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(98,201,184,1) 62%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+}
+
+main {
+  width: min(860px, 92vw);
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+  background: rgba(255,255,255,0.65);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 22px rgba(0,0,0,.12);
+}
+
+.title {
+  text-align: center;
+  padding: 10px 0 50px 0;
+  color: #353535;
+}
+
+.title h1 {
+  margin: 0;
+}
+.title p { margin: 0; opacity: .8; }
+
+.formInput {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem .75rem;
+  align-items: center;
+}
+
+.formInput label { font-size: 1rem; color: #353535; }
+.formInput select, .formInput input[type="date"],
+.advanced select, .advanced input[type="text"] {
+  padding: .5rem .6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.2);
+  background: white;
+}
+
+.advancedWrap {
+  display: grid; gap: .5rem;
+  padding: 30px 0 30px 0;
+}
+.advLabel { display: inline-flex; gap: .5rem; align-items: center; font-weight: 600; }
+
+.advanced {
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: .75rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,.8);
+  border: 1px dashed rgba(0,0,0,.15);
+}
+
+.output {
+  display: grid;
+  gap: .75rem;
+}
+
+#outText {
+  padding: .75rem .9rem;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  word-break: break-all;
+  user-select: all;
+  min-height: 2.5rem;
+}
+
+.outUrl {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.actions { display: flex; gap: .5rem; }
+.actions button {
+  padding: .6rem .9rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #024;
+  color: #fff;
+}
+.actions button:disabled { opacity: .5; cursor: not-allowed; }
+
+@media (max-width: 640px) {
+  .formInput, .advanced {
+    grid-template-columns: 1fr;
+  }
+
+  .content select {
+    width: 100%;
+  }
+
+  main {
+    width: 80%;
+  }
+}
+
+
+.bg {
+  animation:slide 50s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #E30F92 50%, #36328F 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:50s;
+}
+
+.bg3 {
+  animation-duration:50s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}

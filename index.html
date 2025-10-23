@@ -4,70 +4,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DLC — Deep Link Creator</title>
+  <title>DLG — Deep Link Generator</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
   <main>
-    <div class="title">
-      <h1>DLC</h1>
-      <p>Deep Link Creator</p>
-    </div>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
+      <div class="title">
+        <h1>DLG</h1>
+        <p>Deep Link Generator</p>
+      </div>
 
-    <div class="formInput">
-      <label for="country">Country</label>
-      <select name="country" id="country" required>
-        <option selected disabled value="">Select Country</option>
-        <option value="mexico">Mexico</option>
-        <option value="panama">Panama</option>
-        <option value="jamaica">Jamaica</option>
-      </select>
+      <div class="formInput">
+        <label for="country">Origin Country</label>
+        <select name="country" id="country" required>
+          <option selected disabled value="">Select Country</option>
+          <option value="mexico">Mexico</option>
+          <option value="panama">Panama</option>
+          <option value="jamaica">Jamaica</option>
+          <option value="EC">Ecuador</option>
+          <option value="colombia">Colombia</option>
+          <option value="PE">Peru</option>
+        </select>
 
-      <label for="lang">Language</label>
-      <select name="lang" id="lang" disabled required>
-        <option selected disabled value="">Select language</option>
-        <option value="es">ES</option>
-        <option value="en">EN</option>
-      </select>
-
-      <label for="hotel">Hotel</label>
-      <select name="hotel" id="hotel" disabled required>
-        <option selected disabled value="">Select Hotel</option>
-      </select>
-
-      <label for="startDate">Start date</label>
-      <input type="date" name="startDate" id="startDate" disabled required />
-
-      <label for="endDate">End date</label>
-      <input type="date" name="endDate" id="endDate" disabled required />
-    </div>
-
-    <div class="advancedWrap">
-      <label for="advanced" class="advLabel">
-        <input type="checkbox" name="advanced" id="advanced" />
-        Advanced options
-      </label>
-
-      <div class="advanced" id="advancedBox" hidden>
-        <label for="room">Priority Room</label>
-        <!-- Options are now dynamic per selected hotel -->
-        <select name="room" id="room"></select>
-
-        <label for="discount">Discount Code</label>
-        <input type="text" id="discount" placeholder="e.g. PROMO25" />
+        <label for="lang">Language</label>
+        <select name="lang" id="lang" disabled required>
+          <option selected disabled value="">Select language</option>
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="pt">PT</option>
+        </select>
+        <label for="hotel">Hotel</label>
+        <select name="hotel" id="hotel" disabled required>
+          <option selected disabled value="">Select Hotel</option>
+        </select>
+        <label for="startDate">Start date</label>
+        <input type="date" name="startDate" id="startDate" disabled required />
+        <label for="endDate">End date</label>
+        <input type="date" name="endDate" id="endDate" disabled required />
+      </div>
+      <div class="advancedWrap">
+        <label for="advanced" class="advLabel">
+          <input type="checkbox" name="advanced" id="advanced" />
+          Advanced options
+        </label>
+        <div class="advanced" id="advancedBox" hidden>
+          <label for="room">Priority Room</label>
+          <select name="room" id="room">
+            <option value="" selected>None</option>
+            <option value="jr-suite">Junior Suite</option>
+            <option value="suite">Suite</option>
+            <option value="std">Standard</option>
+          </select>
+          <label for="discount">Discount Code</label>
+          <input type="text" id="discount" placeholder="e.g. PROMO25" />
+        </div>
+      </div>
+      <div>
+        <p class="outUrl">Output URL</p>
+      </div>
+      <div class="output">
+        <p id="outText">Select all options</p>
+        <div class="actions">
+          <button id="copy" type="button">Copy</button>
+          <button id="open" type="button">Open</button>
+          <button id="reset" type="button">Reset</button>
+        </div>
       </div>
     </div>
-
-    <div class="output">
-      <p id="outText">Select all options</p>
-      <div class="actions">
-        <button id="copy" type="button">Copy</button>
-        <button id="open" type="button">Open</button>
-        <button id="reset" type="button">Reset</button>
-      </div>
-    </div>
-  </main>
-
+  </main>    
   <script src="main.js"></script>
 </body>
 </html>
