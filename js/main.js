@@ -324,7 +324,7 @@ function buildBookcoreURL(hotelObj, countryISO, langCode, start, end, priorityRo
   let url = `https://www.decameron.com/${langCode}/bookcore/availability/${hotelObj.slug}/${start}/${end}/?country=${countryISO}`;
   const extra = new URLSearchParams();
   if (advanced.checked && priorityRoom) extra.set('priorityRoom', priorityRoom);
-  if (advanced.checked && discountCode) extra.set('discount', discountCode);
+  if (advanced.checked && discountCode) extra.set('cp', discountCode);
   const qs = extra.toString();
   if (qs) url += `&${qs}`;
   return { url, error: '' };
